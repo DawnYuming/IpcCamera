@@ -1,6 +1,16 @@
 <RCC>
     <qresource prefix="/">
         <file>Qml/common/Window.qml</file>
-        <file>Qml/MainWin/main.qml</file>
+        <file>Qml/common/TextInputRec.qml</file>
+        <file>Qml/common/style.js</file>
+        <file>Qml/common/GeneralButton.qml</file>
+        <file>Qml/common/PushButton.qml</file>
+        <file>Qml/common/TisDialog.qml</file>
+        <file>Qml/LoginWin/Content/LoginRec.qml</file>
+        <file>Qml/LoginWin/LoginWin.qml</file>
+        <file>Qml/MainWin/MainWin.qml</file>
+        <file>Qml/common/TitleBar.qml</file>
+        <file>Qml/MainWin/common/Menu.qml</file>
+        <file>Qml/MainWin/common/IconRec.qml</file>
     </qresource>
 </RCC>

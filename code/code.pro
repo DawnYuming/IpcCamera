@@ -1,10 +1,15 @@
 TEMPLATE = app
 
-QT += qml quick
-CONFIG += c++11
+QT += qml quick core
+CONFIG += c++11 console
+TARGET = IpcCamera
+QMAKE_CLEAN += $$TARGET
 
 RESOURCES += \
-    qml.Resources.qrc
+    qml.Resources.qrc \
+    resources.qrc
+
+INCLUDEPATH += widgets models
 
 equals( QT_MAJOR_VERSION, 5 ) {
     CONFIG += c++11
@@ -17,6 +22,13 @@ else {
     QT += widgets declarative network serialport multimedia
     DEFINES += QT4VERSION
     message(" ================ QT 4 VERSION================= ")
+}
+
+CONFIG(debug, debug|release){
+    DEFINES -= QT_NO_DEBUG_OUTPUT
+}
+else{
+    DEFINES += QT_NO_DEBUG_OUTPUT
 }
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -42,20 +54,22 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    Widget/ApplicationContext.h \
-    Widget/DeclarativeWindow.h \
-    Widget/SlidingStackedWidget.h \
-    Widget/Toast.h \
-    Widget/Window.h \
-    Widget/WinManager.h \
-    IpcCameraApplication.h
+    widgets/ApplicationContext.h \
+    widgets/DeclarativeWindow.h \
+    widgets/SlidingStackedWidget.h \
+    widgets/Toast.h \
+    widgets/Window.h \
+    widgets/WinManager.h \
+    IpcCameraApplication.h \
+    models/LoginModel.h
 
 SOURCES += \
-    Widget/ApplicationContext.cpp \
-    Widget/DeclarativeWindow.cpp \
-    Widget/SlidingStackedWidget.cpp \
-    Widget/Toast.cpp \
-    Widget/Window.cpp \
-    Widget/WinManager.cpp \
+    widgets/ApplicationContext.cpp \
+    widgets/DeclarativeWindow.cpp \
+    widgets/SlidingStackedWidget.cpp \
+    widgets/Toast.cpp \
+    widgets/Window.cpp \
+    widgets/WinManager.cpp \
     IpcCameraApplication.cpp \
-    main.cpp
+    main.cpp \
+    models/LoginModel.cpp

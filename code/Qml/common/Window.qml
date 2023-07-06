@@ -3,8 +3,9 @@ import QtQuick 2.6
 Rectangle {
     property string title
 
-//    width: 800
-//    height: 600
+    width: _window.screenWidth
+    height: _window.screenHeight
+
     color : "#ffffff"
 
     /*格式化鼠标点击区域*/

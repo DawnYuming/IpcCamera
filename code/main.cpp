@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include "IpcCameraApplication.h"
-#include <QQmlApplicationEngine>
+#include <QCoreApplication>
 
 int main(int argc, char *argv[])
 {

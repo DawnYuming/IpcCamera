@@ -1,10 +1,4 @@
 #include "IpcCameraApplication.h"
-#include "ApplicationContext.h"
-#include "WinManager.h"
-#include "DeclarativeWindow.h"
-#include <QDebug>
-#include <QTimer>
-#include <QDesktopWidget>
 
 IpcCameraApplication::IpcCameraApplication(int &argc, char **argv)
   : m_app(argc, argv)
@@ -15,9 +9,11 @@ IpcCameraApplication::IpcCameraApplication(int &argc, char **argv)
 
     createWindow();
     setApplicationContext();
+    registerQmlTypes();
 
     QTimer::singleShot(1000, this, [] {
-        WinManager::instance()->gotoWin("Main");
+//        WinManager::instance()->gotoWin("LoginWin");
+        WinManager::instance()->gotoWin("MainWin");
     });
 }
 
@@ -28,7 +24,13 @@ void IpcCameraApplication::setApplicationContext()
 
 void IpcCameraApplication::createWindow()
 {
-    WinManager::instance()->addWin(new DeclarativeWindow("MainWin", QUrl("qrc:/main.qml")));
+//    WinManager::instance()->addWin(new DeclarativeWindow("LoginWin", QUrl("qrc:/Qml/LoginWin/LoginWin.qml")));
+    WinManager::instance()->addWin(new DeclarativeWindow("MainWin", QUrl("qrc:/Qml/MainWin/MainWin.qml")));
+}
+
+void IpcCameraApplication::registerQmlTypes()
+{
+    qmlRegisterType<LoginModel> ("MyModels", 1, 0, "LoginModel");
 }
 
 int IpcCameraApplication::run()

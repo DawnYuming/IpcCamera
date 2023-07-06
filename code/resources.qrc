@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/image/passwd_icon.png</file>
+        <file>res/image/user_icon.png</file>
+        <file>res/image/ipc_camera_log.png</file>
+        <file>res/image/mainWin_backgraound.jpg</file>
+        <file>res/image/mainWin_backgraound.jpeg</file>
+        <file>res/image/camera_icon.png</file>
+        <file>res/image/photo_icon.png</file>
+        <file>res/image/setting_icon.png</file>
+    </qresource>
+</RCC>

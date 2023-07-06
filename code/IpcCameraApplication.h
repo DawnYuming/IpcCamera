@@ -3,6 +3,15 @@
 
 #include <QObject>
 #include <QApplication>
+#include <QQmlEngine>
+#include <QDebug>
+#include <QTimer>
+#include <QDesktopWidget>
+
+#include "LoginModel.h"
+#include "ApplicationContext.h"
+#include "WinManager.h"
+#include "DeclarativeWindow.h"
 
 class IpcCameraApplication : public QObject
 {
@@ -10,8 +19,10 @@ class IpcCameraApplication : public QObject
 public:
     explicit IpcCameraApplication(int &argc, char **argv);
 
-    void setApplicationContext();
     void createWindow();
+    void registerQmlTypes();
+    void setApplicationContext();
+
     int run();
 signals:
 
