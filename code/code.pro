@@ -61,7 +61,8 @@ HEADERS += \
     widgets/Window.h \
     widgets/WinManager.h \
     IpcCameraApplication.h \
-    models/LoginModel.h
+    models/LoginModel.h \
+    utils/CameraClient.h
 
 SOURCES += \
     widgets/ApplicationContext.cpp \
@@ -72,4 +73,5 @@ SOURCES += \
     widgets/WinManager.cpp \
     IpcCameraApplication.cpp \
     main.cpp \
-    models/LoginModel.cpp
+    models/LoginModel.cpp \
+    utils/CameraClient.cpp
